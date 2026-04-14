@@ -28,12 +28,12 @@ function validate() {
 }
 function getLab(email) {
     var hash = email;
-    //var hash = String(CryptoJS.MD5(email.trim().toLowerCase()));
+    var hash = String(CryptoJS.MD5(email.trim().toLowerCase()));
     var index = -1;
     for (var i = 1; i < lines.length; i++)
         if (lines[i][0] == hash)
             index = i;
-    var table_data = '<div class="alert alert-warning" role="alert">User Number not found.</div>'
+    var table_data = '<div class="alert alert-warning" role="alert">Email Address not found.</div>'
     if (index != -1) {
         table_data =  '<p>Below is the information you will need to access the exercises:</p>';
         table_data += '<h5>Using a web browser </h5>';
